@@ -261,7 +261,7 @@ export default function App() {
 
             <div className="project-card">
               <a 
-                href="https://sofiastephengineer.com/" 
+                href="https://playportfolio.sofiastephengineer.com/" 
                 target="_blank" 
                 rel="noreferrer"
                 className="project-link"
