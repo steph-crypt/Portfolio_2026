@@ -21,6 +21,7 @@ const scrollToSection = (e, sectionId) => {
 
 export default function App() {
   const [isVisible, setIsVisible] = useState({});
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -43,6 +44,11 @@ export default function App() {
     return () => observer.disconnect();
   }, []);
 
+  const handleMenuClick = (e, sectionId) => {
+    scrollToSection(e, sectionId);
+    setIsMenuOpen(false);
+  };
+
   return (
     <div className="landing-page">
       {/* Navigation */}
@@ -55,6 +61,24 @@ export default function App() {
             <a href="#skills" onClick={(e) => scrollToSection(e, '#skills')}>Skills</a>
             <a href="#projects" onClick={(e) => scrollToSection(e, '#projects')}>Projects</a>
             <a href="#contact" onClick={(e) => scrollToSection(e, '#contact')}>Contact</a>
+          </div>
+          <button 
+            className="mobile-menu-toggle"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            <span className={`hamburger ${isMenuOpen ? 'open' : ''}`}>
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+          </button>
+          <div className={`mobile-dropdown ${isMenuOpen ? 'open' : ''}`}>
+            <a href="#hero" onClick={(e) => handleMenuClick(e, '#hero')}>Home</a>
+            <a href="#about" onClick={(e) => handleMenuClick(e, '#about')}>About</a>
+            <a href="#skills" onClick={(e) => handleMenuClick(e, '#skills')}>Skills</a>
+            <a href="#projects" onClick={(e) => handleMenuClick(e, '#projects')}>Projects</a>
+            <a href="#contact" onClick={(e) => handleMenuClick(e, '#contact')}>Contact</a>
           </div>
         </div>
       </nav>
@@ -261,7 +285,7 @@ export default function App() {
 
             <div className="project-card">
               <a 
-                href="https://playportfolio.sofiastephengineer.com/" 
+                href="https://playportfolio.sofiastephengineer.com/"
                 target="_blank" 
                 rel="noreferrer"
                 className="project-link"
