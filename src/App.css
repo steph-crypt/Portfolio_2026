@@ -709,6 +709,10 @@ section {
     order: -1;
   }
 
+  .mouse {
+    display: none;
+  }
+
   .image-wrapper {
     width: 300px;
     height: 300px;
