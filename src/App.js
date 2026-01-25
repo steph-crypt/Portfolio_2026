@@ -8,8 +8,8 @@ import { ReactComponent as Ruby } from './icons/rails-svgrepo-com.svg';
 import { ReactComponent as GitHub } from './icons/github-svgrepo-com.svg';
 import { ReactComponent as Linkedin } from './icons/linkedin-svgrepo-com.svg';
 import { ReactComponent as Download } from './icons/download-minimalistic-svgrepo-com.svg';
-import pdf from "./Sofia Stephenson - CV 2026 (1).pdf";
-import { useState, useEffect } from 'react';
+import pdf from "./Sofia Stephenson - CV 2026.pdf";
+import { useState, useEffect, useRef } from 'react';
 
 const scrollToSection = (e, sectionId) => {
   e.preventDefault();
@@ -22,6 +22,8 @@ const scrollToSection = (e, sectionId) => {
 export default function App() {
   const [isVisible, setIsVisible] = useState({});
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [trail, setTrail] = useState([]);
+  const trailRef = useRef([]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -44,6 +46,70 @@ export default function App() {
     return () => observer.disconnect();
   }, []);
 
+  // Mouse trail effect
+  useEffect(() => {
+    let animationFrameId;
+    let lastTime = 0;
+    const throttleDelay = 16; // ~60fps
+
+    // Pink and purple color palette
+    const colors = [
+      '#ec4899', // pink-500
+      '#f472b6', // pink-400
+      '#f9a8d4', // pink-300
+      '#fbcfe8', // pink-200
+      '#8b5cf6', // purple-500
+      '#a78bfa', // purple-400
+      '#c4b5fd', // purple-300
+      '#ddd6fe', // purple-200
+      '#d946ef', // fuchsia-500
+      '#e879f9', // fuchsia-400
+      '#f0abfc', // fuchsia-300
+      '#f5d0fe', // fuchsia-200
+    ];
+
+    const handleMouseMove = (e) => {
+      const currentTime = Date.now();
+      
+      if (currentTime - lastTime < throttleDelay) {
+        return;
+      }
+      lastTime = currentTime;
+
+      // Randomly select a color from the palette
+      const color = colors[Math.floor(Math.random() * colors.length)];
+
+      const newParticle = {
+        id: Date.now() + Math.random(),
+        x: e.clientX,
+        y: e.clientY,
+        opacity: 1,
+        color: color,
+      };
+
+      trailRef.current = [...trailRef.current, newParticle].slice(-15); // Keep last 15 particles
+      setTrail([...trailRef.current]);
+
+      // Fade out particles
+      setTimeout(() => {
+        trailRef.current = trailRef.current.filter(p => p.id !== newParticle.id);
+        setTrail([...trailRef.current]);
+      }, 600);
+    };
+
+    // Only enable on non-touch devices
+    if (window.matchMedia('(pointer: fine)').matches) {
+      window.addEventListener('mousemove', handleMouseMove);
+    }
+
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
+      }
+    };
+  }, []);
+
   const handleMenuClick = (e, sectionId) => {
     scrollToSection(e, sectionId);
     setIsMenuOpen(false);
@@ -51,6 +117,19 @@ export default function App() {
 
   return (
     <div className="landing-page">
+      {/* Mouse Trail */}
+      {trail.map((particle) => (
+        <div
+          key={particle.id}
+          className="mouse-trail-particle"
+          style={{
+            left: `${particle.x}px`,
+            top: `${particle.y}px`,
+            backgroundColor: particle.color,
+            boxShadow: `0 0 10px ${particle.color}80, 0 0 20px ${particle.color}60`,
+          }}
+        />
+      ))}
       {/* Navigation */}
       <nav className="navbar">
         <div className="nav-container">
@@ -282,7 +361,6 @@ export default function App() {
                 </div>
               </a>
             </div>
-
             <div className="project-card">
               <a 
                 href="https://playportfolio.sofiastephengineer.com/"
@@ -303,6 +381,30 @@ export default function App() {
                   <h3>Sofia Stephenson Play Portfolio</h3>
                   <p>
                     A single page React.js App, built with SCSS, SCSS animations, Hostinger Web Server.
+                  </p>
+                </div>
+              </a>
+            </div>
+            <div className="project-card">
+              <a 
+                href="https://sepidehkaav.com/"
+                target="_blank" 
+                rel="noreferrer"
+                className="project-link"
+              >
+                <div className="project-image">
+                  <img 
+                    src="/Screenshot 2026-01-25 at 01.21.56.png" 
+                    alt="Portfolio" 
+                  />
+                  <div className="project-overlay">
+                    <span className="project-link-text">View Project →</span>
+                  </div>
+                </div>
+                <div className="project-info">
+                  <h3>Sepideh Kaav Comedian Website</h3>
+                  <p>
+                    A single page React.js App, built with SCSS, SCSS animations, with fully functional mailing list, and deployed through Hostinger Web Server.
                   </p>
                 </div>
               </a>

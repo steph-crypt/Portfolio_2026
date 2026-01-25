@@ -682,8 +682,35 @@ section {
   text-align: center;
 }
 
+/* Mouse Trail */
+.mouse-trail-particle {
+  position: fixed;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  animation: trailFade 1s ease-out forwards;
+}
+
+@keyframes trailFade {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.3);
+  }
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
+  .mouse-trail-particle {
+    display: none;
+  }
+
   .nav-links {
     display: none;
   }
