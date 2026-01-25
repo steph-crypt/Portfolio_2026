@@ -23,6 +23,12 @@
   --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
 }
 
+.bebas-neue-regular {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 .landing-page {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   color: var(--text-dark);
@@ -61,6 +67,7 @@
 .nav-logo {
   font-size: 1.5rem;
   font-weight: 700;
+  font-family: "Bebas Neue", sans-serif;
   background: var(--gradient-1);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -244,6 +251,7 @@
 
 .hero-text {
   color: white;
+  font-family: "Bebas Neue", sans-serif;
 }
 
 .hero-title {
@@ -383,6 +391,7 @@ section {
 
 .section-title {
   font-size: clamp(2rem, 4vw, 3rem);
+  font-family: "Bebas Neue", sans-serif;
   font-weight: 700;
   text-align: center;
   margin-bottom: 4rem;
@@ -477,7 +486,7 @@ section {
 
 .skill-card {
   background: white;
-  padding: 2rem;
+  padding: 1.5rem;
   border-radius: 20px;
   text-align: center;
   transition: all 0.3s ease;
@@ -571,7 +580,7 @@ section {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(99, 102, 241, 0.9);
+  background: linear-gradient(135deg, rgba(236, 72, 153, 0.9) 0%, rgba(139, 92, 246, 0.9) 50%, rgba(99, 102, 241, 0.9) 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -615,6 +624,7 @@ section {
 }
 
 .contact-section .section-title {
+  font-family: "Bebas Neue", sans-serif;
   color: white;
   -webkit-text-fill-color: white;
   background: none;
@@ -790,6 +800,6 @@ section {
   }
 
   .skills-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 }

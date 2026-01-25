@@ -8,6 +8,16 @@ import { ReactComponent as Ruby } from './icons/rails-svgrepo-com.svg';
 import { ReactComponent as GitHub } from './icons/github-svgrepo-com.svg';
 import { ReactComponent as Linkedin } from './icons/linkedin-svgrepo-com.svg';
 import { ReactComponent as Download } from './icons/download-minimalistic-svgrepo-com.svg';
+import { ReactComponent as Sass } from './icons/sass-svgrepo-com.svg';
+import { ReactComponent as Html } from './icons/html-5-svgrepo-com.svg';
+import { ReactComponent as Docker } from './icons/docker-svgrepo-com.svg';
+import { ReactComponent as Webpack } from './icons/webpack-svgrepo-com.svg';
+import { ReactComponent as Cypress } from './icons/cypress-svgrepo-com.svg';
+import { ReactComponent as Github } from './icons/github-142-svgrepo-com.svg';
+
+
+
+
 import pdf from "./Sofia Stephenson - CV 2026.pdf";
 import { useState, useEffect, useRef } from 'react';
 
@@ -275,6 +285,30 @@ export default function App() {
             <div className="skill-card">
               <Ruby className="skill-icon" />
               <h3>Ruby on Rails</h3>
+            </div>
+            <div className="skill-card">
+              <Sass className="skill-icon" />
+              <h3>SASS</h3>
+            </div>
+            <div className="skill-card">
+              <Html className="skill-icon" />
+              <h3>HTML</h3>
+            </div>
+            <div className="skill-card">
+              <Docker className="skill-icon" />
+              <h3>Docker</h3>
+            </div>
+            <div className="skill-card">
+              <Cypress className="skill-icon" />
+              <h3>Cypress</h3>
+            </div>
+            <div className="skill-card">
+              <Webpack className="skill-icon" />
+              <h3>Webpack</h3>
+            </div>
+            <div className="skill-card">
+              <Github className="skill-icon" />
+              <h3>Github</h3>
             </div>
           </div>
         </div>
