@@ -18,7 +18,7 @@ import { ReactComponent as Github } from './icons/github-142-svgrepo-com.svg';
 
 
 
-import pdf from "./Sofia Stephenson - CV 2026.pdf";
+import pdf from "./Sofia Stephenson - CV 2026 Jan (1) copy.pdf";
 import { useState, useEffect, useRef } from 'react';
 
 const scrollToSection = (e, sectionId) => {
@@ -32,8 +32,8 @@ const scrollToSection = (e, sectionId) => {
 export default function App() {
   const [isVisible, setIsVisible] = useState({});
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [trail, setTrail] = useState([]);
-  const trailRef = useRef([]);
+  // const [trail, setTrail] = useState([]);
+  // const trailRef = useRef([]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -57,68 +57,68 @@ export default function App() {
   }, []);
 
   // Mouse trail effect
-  useEffect(() => {
-    let animationFrameId;
-    let lastTime = 0;
-    const throttleDelay = 16; // ~60fps
+  // useEffect(() => {
+  //   let animationFrameId;
+  //   let lastTime = 0;
+  //   const throttleDelay = 16; // ~60fps
 
-    // Pink and purple color palette
-    const colors = [
-      '#ec4899', // pink-500
-      '#f472b6', // pink-400
-      '#f9a8d4', // pink-300
-      '#fbcfe8', // pink-200
-      '#8b5cf6', // purple-500
-      '#a78bfa', // purple-400
-      '#c4b5fd', // purple-300
-      '#ddd6fe', // purple-200
-      '#d946ef', // fuchsia-500
-      '#e879f9', // fuchsia-400
-      '#f0abfc', // fuchsia-300
-      '#f5d0fe', // fuchsia-200
-    ];
+  //   // Pink and purple color palette
+  //   const colors = [
+  //     '#ec4899', // pink-500
+  //     '#f472b6', // pink-400
+  //     '#f9a8d4', // pink-300
+  //     '#fbcfe8', // pink-200
+  //     '#8b5cf6', // purple-500
+  //     '#a78bfa', // purple-400
+  //     '#c4b5fd', // purple-300
+  //     '#ddd6fe', // purple-200
+  //     '#d946ef', // fuchsia-500
+  //     '#e879f9', // fuchsia-400
+  //     '#f0abfc', // fuchsia-300
+  //     '#f5d0fe', // fuchsia-200
+  //   ];
 
-    const handleMouseMove = (e) => {
-      const currentTime = Date.now();
+  //   const handleMouseMove = (e) => {
+  //     const currentTime = Date.now();
       
-      if (currentTime - lastTime < throttleDelay) {
-        return;
-      }
-      lastTime = currentTime;
+  //     if (currentTime - lastTime < throttleDelay) {
+  //       return;
+  //     }
+  //     lastTime = currentTime;
 
-      // Randomly select a color from the palette
-      const color = colors[Math.floor(Math.random() * colors.length)];
+  //     // Randomly select a color from the palette
+  //     const color = colors[Math.floor(Math.random() * colors.length)];
 
-      const newParticle = {
-        id: Date.now() + Math.random(),
-        x: e.clientX,
-        y: e.clientY,
-        opacity: 1,
-        color: color,
-      };
+  //     const newParticle = {
+  //       id: Date.now() + Math.random(),
+  //       x: e.clientX,
+  //       y: e.clientY,
+  //       opacity: 1,
+  //       color: color,
+  //     };
 
-      trailRef.current = [...trailRef.current, newParticle].slice(-15); // Keep last 15 particles
-      setTrail([...trailRef.current]);
+  //     trailRef.current = [...trailRef.current, newParticle].slice(-15); // Keep last 15 particles
+  //     setTrail([...trailRef.current]);
 
-      // Fade out particles
-      setTimeout(() => {
-        trailRef.current = trailRef.current.filter(p => p.id !== newParticle.id);
-        setTrail([...trailRef.current]);
-      }, 600);
-    };
+  //     // Fade out particles
+  //     setTimeout(() => {
+  //       trailRef.current = trailRef.current.filter(p => p.id !== newParticle.id);
+  //       setTrail([...trailRef.current]);
+  //     }, 600);
+  //   };
 
-    // Only enable on non-touch devices
-    if (window.matchMedia('(pointer: fine)').matches) {
-      window.addEventListener('mousemove', handleMouseMove);
-    }
+  //   // Only enable on non-touch devices
+  //   if (window.matchMedia('(pointer: fine)').matches) {
+  //     window.addEventListener('mousemove', handleMouseMove);
+  //   }
 
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-      if (animationFrameId) {
-        cancelAnimationFrame(animationFrameId);
-      }
-    };
-  }, []);
+  //   return () => {
+  //     window.removeEventListener('mousemove', handleMouseMove);
+  //     if (animationFrameId) {
+  //       cancelAnimationFrame(animationFrameId);
+  //     }
+  //   };
+  // }, []);
 
   const handleMenuClick = (e, sectionId) => {
     scrollToSection(e, sectionId);
@@ -128,7 +128,7 @@ export default function App() {
   return (
     <div className="landing-page">
       {/* Mouse Trail */}
-      {trail.map((particle) => (
+      {/* {trail.map((particle) => (
         <div
           key={particle.id}
           className="mouse-trail-particle"
@@ -139,7 +139,7 @@ export default function App() {
             boxShadow: `0 0 10px ${particle.color}80, 0 0 20px ${particle.color}60`,
           }}
         />
-      ))}
+      ))} */}
       {/* Navigation */}
       <nav className="navbar">
         <div className="nav-container">
