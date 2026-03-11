@@ -18,7 +18,7 @@ import { ReactComponent as Github } from './icons/github-142-svgrepo-com.svg';
 
 
 
-import pdf from "./Sofia Stephenson - CV 2026 Jan (1) copy.pdf";
+import pdf from "./Sofia Stephenson_CV.pdf";
 import { useState, useEffect, useRef } from 'react';
 
 const scrollToSection = (e, sectionId) => {
