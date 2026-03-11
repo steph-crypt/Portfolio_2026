@@ -1,7 +1,7 @@
 {
   "name": "portfolio-landing",
   "version": "0.1.0",
-  "homepage": ".",
+  "homepage": "https://sofiastephengineer.com",
   "private": true,
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
