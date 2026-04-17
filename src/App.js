@@ -336,7 +336,7 @@ export default function App() {
               >
                 <div className="project-image">
                   <img 
-                    src="/Screenshot 2025-12-01 at 14.09.44.png" 
+                    src="/chatdegrasstyson.png" 
                     alt="ChatDegrassTyson" 
                   />
                   <div className="project-overlay">
@@ -362,7 +362,7 @@ export default function App() {
               >
                 <div className="project-image">
                   <img 
-                    src="/Screenshot 2026-01-19 at 17.56.17.png" 
+                    src="/spreadshirt.png" 
                     alt="SpreadShirt" 
                   />
                   <div className="project-overlay">
@@ -386,7 +386,7 @@ export default function App() {
               >
                 <div className="project-image">
                   <img 
-                    src="/Screenshot 2025-12-21 at 17.00.36.png" 
+                    src="/spreadshop.png" 
                     alt="Spreadshop" 
                   />
                   <div className="project-overlay">
@@ -410,7 +410,7 @@ export default function App() {
               >
                 <div className="project-image">
                   <img 
-                    src="/Screenshot 2025-12-21 at 16.03.26.png" 
+                    src="/playportfolio.png" 
                     alt="Portfolio" 
                   />
                   <div className="project-overlay">
@@ -434,7 +434,7 @@ export default function App() {
               >
                 <div className="project-image">
                   <img 
-                    src="/Screenshot 2026-04-17 at 23.06.22.png" 
+                    src="/beatlesanthology.png" 
                     alt="Beatles Anthology" 
                   />
                   <div className="project-overlay">
@@ -458,7 +458,7 @@ export default function App() {
               >
                 <div className="project-image">
                   <img 
-                    src="/Screenshot 2026-01-25 at 01.21.56.png" 
+                    src="/sep-portfolio.png" 
                     alt="Portfolio" 
                   />
                   <div className="project-overlay">
