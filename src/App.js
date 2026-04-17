@@ -14,8 +14,8 @@ import { ReactComponent as Docker } from './icons/docker-svgrepo-com.svg';
 import { ReactComponent as Webpack } from './icons/webpack-svgrepo-com.svg';
 import { ReactComponent as Cypress } from './icons/cypress-svgrepo-com.svg';
 import { ReactComponent as Github } from './icons/github-142-svgrepo-com.svg';
-
-
+import { ReactComponent as Angular } from './icons/angular-icon-svgrepo-com.svg';
+import { ReactComponent as Tailwind } from './icons/tailwind-svgrepo-com.svg';
 
 
 import pdf from "./Sofia Stephenson_CV.pdf";
@@ -310,6 +310,14 @@ export default function App() {
               <Github className="skill-icon" />
               <h3>Github</h3>
             </div>
+            <div className="skill-card">
+              <Angular className="skill-icon" />
+              <h3>Angular</h3>
+            </div>
+            <div className="skill-card">
+              <Tailwind className="skill-icon" />
+              <h3>Tailwind</h3>
+            </div>
           </div>
         </div>
       </section>
@@ -345,7 +353,6 @@ export default function App() {
                 </div>
               </a>
             </div>
-
             <div className="project-card">
               <a 
                 href="https://www.spreadshirt.de/" 
@@ -370,7 +377,6 @@ export default function App() {
                 </div>
               </a>
             </div>
-
             <div className="project-card">
               <a 
                 href="https://www.spreadshop.de/" 
@@ -415,6 +421,30 @@ export default function App() {
                   <h3>Sofia Stephenson Play Portfolio</h3>
                   <p>
                     A single page React.js App, built with SCSS, SCSS animations, Hostinger Web Server.
+                  </p>
+                </div>
+              </a>
+            </div>
+            <div className="project-card">
+              <a 
+                href="https://beatles-anthology.sofiastephengineer.com/" 
+                target="_blank" 
+                rel="noreferrer"
+                className="project-link"
+              >
+                <div className="project-image">
+                  <img 
+                    src="/Screenshot 2026-04-17 at 23.06.22.png" 
+                    alt="Beatles Anthology" 
+                  />
+                  <div className="project-overlay">
+                    <span className="project-link-text">View Project →</span>
+                  </div>
+                </div>
+                <div className="project-info">
+                  <h3>Beatles Anthology</h3>
+                  <p>
+                    Built with Angular.js, SCSS, and ITunes API.
                   </p>
                 </div>
               </a>
