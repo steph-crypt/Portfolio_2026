@@ -434,7 +434,7 @@ export default function App() {
               >
                 <div className="project-image">
                   <img 
-                    src="/beatlesanthology.png" 
+                    src="/beatles.png" 
                     alt="Beatles Anthology" 
                   />
                   <div className="project-overlay">
