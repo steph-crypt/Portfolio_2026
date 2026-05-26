@@ -16,6 +16,7 @@ import { ReactComponent as Cypress } from './icons/cypress-svgrepo-com.svg';
 import { ReactComponent as Github } from './icons/github-142-svgrepo-com.svg';
 import { ReactComponent as Angular } from './icons/angular-icon-svgrepo-com.svg';
 import { ReactComponent as Tailwind } from './icons/tailwind-svgrepo-com.svg';
+import { ReactComponent as Vue } from './icons/vue-svgrepo-com.svg';
 
 
 import pdf from "./Sofia Stephenson_CV.pdf";
@@ -317,6 +318,10 @@ export default function App() {
             <div className="skill-card">
               <Tailwind className="skill-icon" />
               <h3>Tailwind</h3>
+            </div>
+            <div className="skill-card">
+              <Vue className="skill-icon" />
+              <h3>Vue.js</h3>
             </div>
           </div>
         </div>
